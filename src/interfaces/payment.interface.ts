@@ -1,4 +1,4 @@
-import { IBase } from "./base";
+import { IBase } from "./base.interface";
 
 export enum PAYMENT_STATUS {
 	UNPAID = "PA-1",

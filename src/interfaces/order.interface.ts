@@ -1,4 +1,4 @@
-import { IBase } from './base';
+import { IBase } from './base.interface';
 
 export enum ORDER_STATUS {
 	OPEN = "OR-1",

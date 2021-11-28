@@ -4,8 +4,12 @@
       "module": "commonjs",
       "declaration": true,
       "outDir": "./lib",
-      "strict": true
+      "allowSyntheticDefaultImports": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
     },
     "include": ["src"],
+    "incremental": true,
+    "skipLibCheck": true,
     "exclude": ["node_modules", "**/__tests__/*"]
   }

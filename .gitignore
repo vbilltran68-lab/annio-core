@@ -12,3 +12,4 @@ lerna-debug.log*
 
 # more
 package-lock.json
+yank.lock
