@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@nestjs/common": "6.10.14",
+    "@nestjs/microservices": "6.10.14",
     "@nestjs/swagger": "4.1.7",
     "@nestjs/typeorm": "6.2.0",
     "class-transformer": "0.3.1",

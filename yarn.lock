@@ -378,6 +378,14 @@
     cli-color "2.0.0"
     uuid "3.3.3"
 
+"@nestjs/microservices@6.10.14":
+  version "6.10.14"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-6.10.14.tgz#10cb769c40f245c49463f36717bb44af110b4f70"
+  integrity sha512-fe4UC1UFYuEkJPrdhfMFulbqKtPGqWwX1jqqrljhTLb4cZdzeXngUpGxswT9/JKO4UqttoV/wpKP2jNhsYciYw==
+  dependencies:
+    iterare "1.2.0"
+    json-socket "0.3.0"
+
 "@nestjs/swagger@4.1.7":
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.1.7.tgz#f4d4d58de757fa04f93acbc0299aad9c54f50b29"
@@ -2159,6 +2167,11 @@ istanbul-reports@^2.2.6:
   dependencies:
     html-escaper "^2.0.0"
 
+iterare@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/iterare/-/iterare-1.2.0.tgz#7427f5ed45986e4b73e2fea903579f1117f3dd15"
+  integrity sha512-RxMV9p/UzdK0Iplnd8mVgRvNdXlsTOiuDrqMRnDi3wIhbT+JP4xDquAX9ay13R3CH72NBzQ91KWe0+C168QAyQ==
+
 jest-changed-files@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-24.9.0.tgz#08d8c15eb79a7fa3fc98269bc14b451ee82f8039"
@@ -2582,6 +2595,11 @@ json-schema@0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
   integrity sha1-tIDIkuWaLwWVTOcnvT8qTogvnhM=
+
+json-socket@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/json-socket/-/json-socket-0.3.0.tgz#f4b953c685bb8e8bd0b72438f5208d9a0799ae07"
+  integrity sha512-jc8ZbUnYIWdxERFWQKVgwSLkGSe+kyzvmYxwNaRgx/c8NNyuHes4UHnPM3LUrAFXUx1BhNJ94n1h/KCRlbvV0g==
 
 json-stringify-safe@~5.0.1:
   version "5.0.1"
