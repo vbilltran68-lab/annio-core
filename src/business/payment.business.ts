@@ -1,14 +1,9 @@
-import { IBase } from '../interfaces/base.interface';
-
 export enum PAYMENT_STATUS {
-  UNPAID = 'PA-1',
-  FAILED = 'PA-2',
-  EXPIRED = 'PA-3',
-  PAID = 'PA-4',
-  REFUNDING = 'PA-5',
-  REFUNDED = 'PA-6',
+  DECLINED = 'PS_DECLINED',
+  CONFIRMED = 'PS_CONFIRMED',
 }
 
-export interface IPayment extends IBase {
-  status: PAYMENT_STATUS;
+export enum PAYMENT_REQUEST_ACTION {
+  VERIFY = "ACTION_PAYMENT_VERIFY",
 }
+
