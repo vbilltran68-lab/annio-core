@@ -23,5 +23,5 @@ export interface IDatabaseOptionConfig {
 export enum DATABASE_TYPE {
     MYSQL = "mysql",
     MSSQL = "mssql",
-    POSTGRESQL = "postgresql"
+    POSTGRESQL = "postgresql",
 }

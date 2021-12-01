@@ -17,7 +17,7 @@ export class JsonUtils {
         }
         return input;
 	}
-	
+
 	public static filterXss(input: string): string {
 		return xss.filterXSS(input);
 	}
