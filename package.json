@@ -1,5 +1,5 @@
 {
-  "name": "annio-core",
+  "name": "@annio/core",
   "version": "1.0.0",
   "description": "Annio Core Business",
   "main": "lib/index.js",
