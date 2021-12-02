@@ -70,4 +70,3 @@ export class CreateOrderDTO implements ICreateOrderPayload {
   @Expose()
   quantity: number;
 }
-
