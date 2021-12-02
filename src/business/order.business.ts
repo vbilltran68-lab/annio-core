@@ -32,6 +32,11 @@ export interface IOrder extends IBase {
   status: ORDER_STATUS;
 }
 
+export interface ICreateOrderPayload {
+  productId: string;
+  quantity: number;
+}
+
 export class OrderDTO extends BaseDTO implements IOrder {
   @ApiProperty()
   @IsString()
@@ -52,7 +57,7 @@ export class OrderDTO extends BaseDTO implements IOrder {
   status: ORDER_STATUS;
 }
 
-export class CreateOrderDTO {
+export class CreateOrderDTO implements ICreateOrderPayload {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
@@ -65,3 +70,4 @@ export class CreateOrderDTO {
   @Expose()
   quantity: number;
 }
+
