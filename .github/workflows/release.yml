@@ -1,0 +1,63 @@
+name: Build, Test and Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.19.0]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+    steps:
+      - name: Clone Source
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check code quality
+        run: yarn lint
+
+      - name: Build Source
+        run: yarn build
+
+      - name: Publish Package
+        run: yarn publish
+
+      ####### Job Fail Notification  #######
+      - env:
+          SLACK_TITLE: Dockerizing and deploy to ${{ env.NODE_ENV }} failure
+          SLACK_ICON: https://avatars.githubusercontent.com/u/95167182?s=200&v=4
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_FOOTER: Annio API Services
+          SLACK_MESSAGE: |
+            Environment: ${{ env.NODE_ENV }}
+            Commit message: ${{ github.event.head_commit.message }}
+          SLACK_WEBHOOK: ${{ secrets.CI_SLACK_WEBHOOK }}
+          SLACK_LINK_NAMES: true
+        if: failure()
+        name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+
+      ####### Job Success Notification #######
+      - env:
+          SLACK_TITLE: Dockerizing and deploy to ${{ env.APP_ENV }} success
+          SLACK_ICON: https://avatars.githubusercontent.com/u/95167182?s=200&v=4
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_FOOTER: Annio API Services
+          SLACK_MESSAGE: |
+            Environment: ${{ env.NODE_ENV }}
+            Docker image: ${{ needs.build.outputs.image }}
+            Commit message: ${{ github.event.head_commit.message }}
+          SLACK_WEBHOOK: ${{ secrets.CI_SLACK_WEBHOOK }}
+        if: success()
+        name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
