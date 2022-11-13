@@ -21,7 +21,6 @@
     "name": "Bill Tran",
     "email": "tvkhue96@gmail.com"
   },
-  "private": true,
   "dependencies": {
     "@nestjs/common": "6.10.14",
     "@nestjs/microservices": "6.10.14",
