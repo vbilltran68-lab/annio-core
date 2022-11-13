@@ -34,10 +34,10 @@ jobs:
 
       ####### Job Fail Notification  #######
       - env:
-          SLACK_TITLE: Dockerizing and deploy to ${{ env.NODE_ENV }} failure
+          SLACK_TITLE: Release Package Failure
           SLACK_ICON: https://avatars.githubusercontent.com/u/95167182?s=200&v=4
           SLACK_COLOR: ${{ job.status }}
-          SLACK_FOOTER: Annio API Services
+          SLACK_FOOTER: Annio Core
           SLACK_MESSAGE: |
             Environment: ${{ env.NODE_ENV }}
             Commit message: ${{ github.event.head_commit.message }}
@@ -49,13 +49,12 @@ jobs:
 
       ####### Job Success Notification #######
       - env:
-          SLACK_TITLE: Dockerizing and deploy to ${{ env.APP_ENV }} success
+          SLACK_TITLE: Release Package Success
           SLACK_ICON: https://avatars.githubusercontent.com/u/95167182?s=200&v=4
           SLACK_COLOR: ${{ job.status }}
-          SLACK_FOOTER: Annio API Services
+          SLACK_FOOTER: Annio Core
           SLACK_MESSAGE: |
             Environment: ${{ env.NODE_ENV }}
-            Docker image: ${{ needs.build.outputs.image }}
             Commit message: ${{ github.event.head_commit.message }}
           SLACK_WEBHOOK: ${{ secrets.CI_SLACK_WEBHOOK }}
         if: success()
