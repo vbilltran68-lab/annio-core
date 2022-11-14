@@ -7,8 +7,8 @@ import {
     PrimaryColumn,
 } from "typeorm";
 import { InternalServerErrorException } from "@nestjs/common";
-import { generateUUID } from "../utils";
 import { IBase } from "../interfaces";
+import { generateUUID } from "@annio/common/utilities";
 
 export abstract class BaseEntity implements IBase {
     @PrimaryColumn()

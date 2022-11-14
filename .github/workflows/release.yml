@@ -30,7 +30,7 @@ jobs:
         run: yarn build
 
       - name: Publish Package
-        run: yarn release
+        run: yarn package && cd lib && yarn publish
 
       ####### Job Fail Notification  #######
       - env:
