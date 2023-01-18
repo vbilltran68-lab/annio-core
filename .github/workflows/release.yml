@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
@@ -17,8 +20,6 @@ jobs:
     steps:
       - name: Clone Source
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -28,6 +29,14 @@ jobs:
 
       - name: Build Source
         run: yarn build
+
+      - name: Testing
+        run: yarn test:ci
+
+      - name: Generating coverage badges
+        uses: jpb06/jest-badges-action@latest
+        with:
+          branches: master
 
       - name: Publish Package
         run: yarn package && cd lib && yarn publish
